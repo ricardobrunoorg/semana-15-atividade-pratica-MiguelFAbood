@@ -1,17 +1,14 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/rddAcqJ4)
+# Projeto: Integração de Login e Personalização
 
-# Trabalho Prático - Semana 15
+**Aluno:** Miguel Abood
 
-Nesta atividade, vamos integrar ao projeto o módulo de login, cujo código já é fornecido com o repositório compartilhado para a atividade. A partir dessa integração, vamos implementar uma funcionalidade adicional de personalização para marcação e exibição de itens favoritos.
+## Evidências da Implementação
 
-## Informações do trabalho
+**1. Home mostrando usuário logado (“Olá, <nome> | Sair”):**
+![Home mostrando usuário logado](homepage.png)
 
-- Nome:
-- Matricula:
+**2. A funcionalidade funcionando (itens favoritados na home/produtos):**
+![Funcionalidade de favoritos](produtos.png)
 
-
-**Print da tela com a implementação**
-
-<< Coloque aqui uma breve explicação da implementação feita nessa etapa>>
-<<  COLOQUE A IMAGEM TELA 1 AQUI (Mostrando seu marcador de favoritos)>>
-<<  COLOQUE A IMAGEM TELA 2 AQUI >>
+**3. Página “Meus Favoritos” com itens salvos para o usuário logado:**
+![Página Meus Favoritos](favoritos.png)

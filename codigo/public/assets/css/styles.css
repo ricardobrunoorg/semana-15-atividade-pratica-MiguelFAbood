@@ -1,37 +1,50 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"); 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #222;
+}
+
+h1,
 h3 {
     color: #093070;
     border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 0.5rem;
 }
+
 h4 {
     color: #ff7645;
 }
 
 .banner img {
     width: 100%;
+    display: block;
 }
 
 .barra-info {
-    height: 2em;
+    min-height: 2.5rem;
     background-color: #f0f0f0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
 }
 
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    gap: 0.25rem;
 }
 
 .menu li {
-    display: inline;
-    margin: 0px;
-    padding: 0.5em 1em; 
-    height: 2em;
-    line-height: 2em;
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.25rem;
 }
 
 .menu li a {
@@ -42,15 +55,53 @@ h4 {
 
 .menu li:hover {
     background-color: darkblue;
+}
+
+.menu li:hover a {
     color: white;
 }
 
 .dados-usuario {
-    height: 2em;
-    line-height: 2em;
+    line-height: 1.5;
     margin-right: 20px;
+    font-weight: 600;
+    color: #093070;
 }
 
 main {
     padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.page-card {
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #eaf2ff 0%, #f7f7f7 100%);
+}
+
+.auth-page #login {
+    width: min(100%, 32rem);
+}
+
+.auth-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary {
+    background-color: #093070;
+    border-color: #093070;
 }

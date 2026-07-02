@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Favoritos</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/app.js"></script>
+</head>
+<body>
+    <header>
+        <div class="banner"><img src="./assets/images/banner_ti.png" alt="Banner"></div>
+        <div class="barra-info">
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="about.html">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="dados-usuario">
+                <span id="userInfo"></span>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container mt-4">
+        <h1>Meus Favoritos</h1>
+        <p>Estes são os itens que você marcou como favoritos.</p>
+        <div id="lista-favoritos" class="row d-flex flex-wrap gap-3"></div>
+    </main>
+
+    <script>
+        async function carregarFavoritos() {
+            let container = document.getElementById('lista-favoritos');
+            if (!container) return;
+
+            if (!usuarioCorrente || !usuarioCorrente.id) {
+                container.innerHTML = "<p>Faça login para ver seus favoritos.</p>";
+                return;
+            }
+
+            try {
+                const favIds = await getFavoritosIds();
+                if (favIds.length === 0) {
+                    container.innerHTML = "<p>Você ainda não favoritou nenhum item.</p>";
+                    return;
+                }
+
+                const response = await fetch('/api/produtos');
+                const itens = await response.json();
+                const itensFavoritados = itens.filter(item => favIds.includes(item.id));
+
+                container.innerHTML = '';
+                itensFavoritados.forEach(item => {
+                    container.innerHTML += `
+                        <div class="col-md-4 mb-3">
+                            <div class="card p-3 border border-primary">
+                                <h5>${item.titulo}</h5>
+                                <p>${item.descricao}</p>
+                                <button class="btn btn-outline-danger" onclick="favoritar(${item.id})">
+                                    <i class="bi bi-heart-fill"></i> Remover Favorito
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+            } catch (error) {
+                console.error('Erro ao carregar favoritos:', error);
+                container.innerHTML = "<p>Falha ao carregar favoritos. Tente novamente.</p>";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            carregarFavoritos();
+        });
+    </script>
+</body>
+</html>

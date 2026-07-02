@@ -13,13 +13,35 @@
       "senha": "123",
       "nome": "Usuario Comum",
       "email": "user@abc.com"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "titulo": "Curso de JavaScript",
+      "descricao": "Aprenda JS do zero."
     },
     {
-      "login": "rommel",
-      "senha": "123",
-      "nome": "Rommel",
-      "email": "rommel@gmail.com",
-      "id": 3
+      "id": 2,
+      "titulo": "Livro de Node.js",
+      "descricao": "Crie APIs RESTful."
+    },
+    {
+      "id": 3,
+      "titulo": "Monitor 24 Polegadas",
+      "descricao": "Melhore sua produtividade."
+    }
+  ],
+  "favoritos": [
+    {
+      "usuarioId": 2,
+      "produtoId": 1,
+      "id": 1
+    },
+    {
+      "usuarioId": 2,
+      "produtoId": 3,
+      "id": 2
     }
   ]
 }
